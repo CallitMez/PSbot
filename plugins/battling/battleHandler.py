@@ -6,7 +6,7 @@ from data.pokedex import Pokedex
 from plugins.battling.battle import Battle, Pokemon
 from plugins.battling.battleLogic import getAction, getSwitch, getLead
 
-supportedFormats = ['challengecup1v1', 'battlefactory', 'randombattle']
+supportedFormats = ['gen7challengecup1v1', 'battlefactory', 'gen7randombattle']
 
 # This currently only work in singles and not doubles / triples
 class BattleHandler:
@@ -26,9 +26,9 @@ class BattleHandler:
         self.send('{room}|{msg}'.format(room = battle, msg = msg))
     def handleOutcome(self, battle, won):
         if won:
-            self.respond(battle, 'O-oh, I won?')
+            self.respond(battle, 'gg though')
         else:
-            self.respond(battle, 'I guess that was expected...')
+            self.respond(battle, 'gg')
         print('Battle: {outcome}'.format(outcome = 'win' if won else 'loss'))
 
     def getSpecies(self, details):

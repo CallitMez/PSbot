@@ -42,7 +42,11 @@ def URL(): return 'https://github.com/QuiteQuiet/PokemonShowdownBot/'
 
 def Command(self, cmd, room, msg, user):
     ''' Returns the reply if the command exists, and False if it doesn't '''
-
+    
+    if cmd == "search":
+        return ReplyObject('/search gen7randombattle')
+    if cmd == "timer":
+        return ReplyObject('/timer ' + msg)
     if cmd in ['source', 'git']:
         return ReplyObject('Source code can be found at: {url}'.format(url = URL()))
     if cmd == 'credits':

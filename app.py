@@ -42,7 +42,7 @@ class PSBot(PokemonShowdownBot):
     def splitMessage(self, ws, message):
         if not message: return
         if '\n' not in message: self.parseMessage(message, '')
-
+        print(message)
         room = ''
         msg = message.split('\n')
         if msg[0].startswith('>'):
@@ -235,12 +235,12 @@ class PSBot(PokemonShowdownBot):
 
 psb = PSBot()
 restartCount = 0
-while restartCount < 100:
+while restartCount < 1:
     # This function has a loop that runs as long as the websocket is connected
     psb.ws.run_forever()
     # If we get here, the socket is closed and disconnected
     # so we have to reconnect and restart (after waiting a bit of course, say half a minute)
-    time.sleep(30)
+    time.sleep(1)
     print('30 seconds since last disconnect. Retrying connection...')
     psb.openConnection()
     restartCount += 1
