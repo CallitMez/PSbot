@@ -31,7 +31,8 @@ This is distributed under the terms of the [MIT License][1].
 
 Credits
 -------
-
-Owner
+This bot is based on PokemonShowdownBot by:
 
 - Quite Quiet
+
+https://github.com/QuiteQuiet/PokemonShowdownBot
